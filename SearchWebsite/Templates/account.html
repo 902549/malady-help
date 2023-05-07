@@ -1,0 +1,20 @@
+{% extends "Layout.html" %}
+{%block content %}
+<br><br>
+    <div class="container">
+        <br>
+        <h1>{{ current_user.username}}</h1>
+        <h4>{% for query in list_of_queries %}
+            <br>
+            <!-- <h1>{{ query.author.username }} </h1>  -->
+                {{ query }}
+            {% endfor %}
+        </h4>
+        <!-- <summary suggestion></summary> -->
+        <!-- {% if current_user.is_authenticated %}
+            <section class="bg-light text-dark text-center p-5 pt-lg-5">
+                Summary: {{ summary['summary_text'] }}?
+            </section>
+        {% endif %} -->
+    </div>  
+{% endblock content%}

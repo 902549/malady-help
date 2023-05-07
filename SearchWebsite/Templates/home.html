@@ -1,0 +1,63 @@
+{% extends "Layout.html" %}
+{%block content %}
+  <!-- This container is a bootstrap class showcasing the zebra picture-->
+<section class="bg-light text-dark text-center p-5 pt-lg-5">
+    <!-- Flashes account creation message-->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+          {% for category , message in messages %}
+            <div class="alert alert-{{ category }}">
+              {{ message }}
+            </div>
+        {% endfor%}
+        {%endif%}
+      {% endwith %}
+  <div class ='container'>
+      <div class="d-sm-flex align-items-center justify content-between">
+          <img class="img-fluid w-25 h-25 rounded rounded mx-auto d-block padding" src ="/static/Zebra-Head.svg" alt ="EDSZebra" />
+          <div>
+              <h1>Empowering <span class="font-weight-bold">Ehlers Danlos Syndrome</span></h1>
+              <h5>Patients With the power of <span class="font-weight-bold">Semantic search</span> at their finger tips</h5>
+          </div>
+      </div>  
+  </div>
+
+</section>
+
+<!--This is the search bar-->
+<form action="/results" method="POST">
+  <section class="bg-light text-light p-5 pt-lg-5">
+      <div class="container">
+          <div class="input-group form-group search-input align-items-center">
+              <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2" name="query" required>
+              <!-- {% if form.query.errors %}
+                  {{ form.query(class="form-control is-invalid")}}
+                  <div class="invalid-feedback">
+                      {% for error in form.query.errors %}
+                          <span>{{ error }} </span>
+                      {% endfor %}
+                  </div>
+              {% else %}
+                  {{ form.query(class="form-control")}}
+              {% endif %} -->
+              <!-- <div class="input-group-append">
+                  <input class="btn btn-dark" type="Submit">Search</button>
+              </div> -->
+              <div class="form-group-append">
+                {{ form.submit(class="btn btn-dark")}}
+              </div>
+          </div>
+          
+      </div>
+  </section>
+</form>
+
+<!--This is the zigzag image-->
+<div class="container-fluid px-0">
+  <div class="row">
+      <div class="col-md-12 space">
+          <img class="img-fluid"src ="/static/chevron.jpg" alt ="ZigZagPattern"/>
+      </div>
+  </div>
+</div>
+{% endblock content%} 
