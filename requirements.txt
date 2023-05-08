@@ -51,3 +51,4 @@ Werkzeug==2.3.3
 WTForms==3.0.1
 wtforms-validators==1.0.0
 zope.interface==6.0
+sentence-transformers==2.2.2
