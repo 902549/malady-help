@@ -10,7 +10,7 @@ import pandas as pd
 # cwd = os.getcwd()
 
 #Importig the csv
-df = pd.read_csv('SearchWebsite\\Database_new.csv', index_col = 0)
+df = pd.read_csv('SearchWebsite/Database_new.csv', index_col = 0)
 corpus = df['Data'].tolist()
 labels = df['Label'].tolist()
 
