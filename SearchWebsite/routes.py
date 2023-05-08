@@ -18,7 +18,7 @@ queries = []
 
 model = SentenceTransformer('search/search-model')
 
-index = faiss.read_index('SearchWebsite\\disease_description.index')
+index = faiss.read_index('SearchWebsite/disease_description.index')
 
 @app.route("/")
 @app.route("/home")
